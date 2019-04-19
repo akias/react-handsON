@@ -5,8 +5,8 @@ import axios from 'axios';
 
 class LikeButton extends Component {
   static defaultProps = {
-    likedText: '取消',
-    unLikedText: '点赞'
+    likedText: '良いねした',
+    unLikedText: '良いね！'
   }
   constructor () {
     super()
@@ -19,10 +19,12 @@ class LikeButton extends Component {
     })
     request.post('/test/comment_nice')
     .then(res => {
-      console.log(res.data.body);
-      this.setState({
-        isLiked: !this.state.isLiked
-      })
+      console.log(res.data);
+      if(res.data.statusCode == 200){
+        this.setState({
+          isLiked: !this.state.isLiked
+        })
+      }
     })
   }
 

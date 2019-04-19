@@ -11,7 +11,9 @@ class Header extends Component {
       return (
         <div>
           <Title />
-          <LikeButton likedText = 'いいねした' unLikedText = '良いね！'/>
+          {/* propsを使って中国語に変換できる */}
+          {/* <LikeButton likedText = '已赞' unLikedText = '赞'/> */}
+          <LikeButton />
         </div>
       )
     }
